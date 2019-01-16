@@ -2,18 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Creat Blog</title>
+    <title th:text="#{list.title}"></title>
 </head>
 <body>
-<h1>Blog List</h1>
+<h1 th:text="#{list.heading}"></h1>
+Language: <a href="?lang=en">English</a> | <a href="?lang=vie">Tieng Viet</a>
 <p>
-    <a href="/create-blog">Create new Blog </a>
+    <a href="/create-blog" ><p th:text="#{list.create_new_blog}"></p></a>
 </p>
 
     <table border="1">
         <tr>
-            <td>Title</td>
-            <td>Date</td>
+            <td th:text="#{list.title_of_blog}"></td>
+            <td th:text="#{list.date_of_blog}"></td>
         </tr>
         <th:block th:each="blog:${blogs}">
             <tr>
